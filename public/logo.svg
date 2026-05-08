@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="OLIVE Gents Salon">
+  <rect x="14" y="14" width="372" height="372" fill="#FFFFFF" stroke="#48B040" stroke-width="6"/>
+  <g font-family="Georgia, 'Times New Roman', serif" font-style="italic">
+    <text x="200" y="225" text-anchor="middle" font-size="150" fill="#48B040" font-weight="500" letter-spacing="-2">olive</text>
+  </g>
+  <circle cx="172" cy="135" r="11" fill="#A08B3C"/>
+  <g fill="#48B040">
+    <path d="M 280 175 q 35 -20 70 -8 q -28 8 -52 22 z"/>
+    <path d="M 270 200 q 38 -8 70 8 q -32 12 -56 18 z"/>
+  </g>
+  <text x="200" y="305" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="32" fill="#A08B3C" letter-spacing="9" font-weight="400">GENTS SALON</text>
+</svg>

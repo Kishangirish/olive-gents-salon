@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "olive",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "/Users/Kisha/Documents/Claude Code/OLIVE Website", "run", "dev", "--", "--port", "3737"],
+      "port": 3737
+    }
+  ]
+}
