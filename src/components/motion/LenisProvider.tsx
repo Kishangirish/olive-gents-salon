@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -13,23 +12,32 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
+    // Dynamic import keeps Lenis out of the SSR bundle entirely
+    import("lenis").then(({ default: Lenis }) => {
+      const lenis = new Lenis({
+        duration: 1.1,
+        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+      });
+
+      lenis.on("scroll", ScrollTrigger.update);
+
+      const tickerCb = (time: number) => {
+        lenis.raf(time * 1000);
+      };
+      gsap.ticker.add(tickerCb);
+      gsap.ticker.lagSmoothing(0);
+
+      // Store cleanup on window so the effect cleanup can reach it
+      (window as unknown as Record<string, unknown>).__lenisCleanup = () => {
+        gsap.ticker.remove(tickerCb);
+        lenis.destroy();
+      };
     });
 
-    lenis.on("scroll", ScrollTrigger.update);
-
-    const tickerCb = (time: number) => {
-      lenis.raf(time * 1000);
-    };
-    gsap.ticker.add(tickerCb);
-    gsap.ticker.lagSmoothing(0);
-
     return () => {
-      gsap.ticker.remove(tickerCb);
-      lenis.destroy();
+      const cleanup = (window as unknown as Record<string, unknown>).__lenisCleanup as (() => void) | undefined;
+      cleanup?.();
     };
   }, []);
 
