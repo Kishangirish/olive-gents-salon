@@ -50,9 +50,9 @@ export function Nav() {
 
         <Link
           href="/#contact"
-          className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 border border-gold/40 text-gold label hover:bg-gold hover:text-ink transition-colors"
+          className="hidden md:inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-olive text-bone label hover:bg-olive-light hover:shadow-[0_0_24px_rgba(72,176,64,0.35)] transition-all duration-300"
         >
-          Book a chair
+          Book Now
         </Link>
 
         <button

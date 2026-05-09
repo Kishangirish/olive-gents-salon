@@ -41,16 +41,20 @@ export function Services() {
   return (
     <section id="services" ref={root} className="relative bg-ink py-28 md:py-40 overflow-hidden">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10">
-        <Reveal as="div" className="flex items-end justify-between gap-10 mb-16 md:mb-24">
+        <Reveal as="div" className="flex items-end justify-between gap-10 mb-16 md:mb-24 flex-wrap">
           <div>
-            <p className="label text-gold mb-6">— Services</p>
-            <h2 className="display text-bone text-5xl md:text-7xl">
-              The menu, <span className="display-italic text-olive-light">slowly read.</span>
+            <p className="label text-gold/80 mb-5 flex items-center gap-3">
+              <span className="block w-8 h-px bg-gold/60" />
+              What We Offer
+            </p>
+            <h2 className="display text-bone text-5xl md:text-7xl leading-[0.95]">
+              Transparent{" "}
+              <span className="display-italic text-olive-light">Grooming</span>
             </h2>
           </div>
           <p className="hidden md:block max-w-md text-bone/60 text-base leading-relaxed pb-2">
-            Four chapters: Hair, Beard &amp; Shave, Color &amp; Treatments, and the
-            full Olive Experience. Cuts from AED 20 — full menu confirmed in salon.
+            Openly shared, clearly priced. Hair Rituals, Beard &amp; Skin, Color
+            &amp; Treatment — every service, every rate. Cuts from AED 20.
           </p>
         </Reveal>
       </div>

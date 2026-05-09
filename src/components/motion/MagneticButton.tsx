@@ -9,7 +9,7 @@ type Props = {
   href?: string;
   onClick?: () => void;
   className?: string;
-  variant?: "gold" | "ghost" | "olive";
+  variant?: "gold" | "ghost" | "olive" | "olive-pill" | "ghost-pill";
   external?: boolean;
 };
 
@@ -36,10 +36,12 @@ export function MagneticButton({ children, href, onClick, className, variant = "
   };
 
   const styles = clsx(
-    "group inline-flex items-center justify-center gap-3 px-7 py-4 text-[0.78rem] uppercase tracking-widest2 font-medium transition-colors will-change-transform",
-    variant === "gold" && "bg-gold text-ink hover:bg-bone",
-    variant === "olive" && "bg-olive text-bone hover:bg-olive-light hover:text-ink",
-    variant === "ghost" && "border border-bone/20 text-bone hover:border-gold hover:text-gold",
+    "group inline-flex items-center justify-center gap-3 text-[0.78rem] uppercase tracking-widest2 font-medium transition-all will-change-transform",
+    variant === "gold" && "px-7 py-4 bg-gold text-ink hover:bg-bone",
+    variant === "olive" && "px-7 py-4 bg-olive text-bone hover:bg-olive-light hover:text-ink",
+    variant === "ghost" && "px-7 py-4 border border-bone/20 text-bone hover:border-gold hover:text-gold",
+    variant === "olive-pill" && "px-8 py-3.5 rounded-full bg-olive text-bone hover:bg-olive-light hover:shadow-[0_0_30px_rgba(72,176,64,0.4)] transition-shadow",
+    variant === "ghost-pill" && "px-8 py-3.5 rounded-full border border-bone/30 text-bone hover:border-olive hover:text-olive",
     className,
   );
 
