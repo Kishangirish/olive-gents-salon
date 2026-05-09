@@ -17,6 +17,9 @@
     "lenis": "^1.1.20",
     "clsx": "^2.1.1"
   },
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "devDependencies": {
     "typescript": "^5.7.3",
     "@types/node": "^22.10.7",
